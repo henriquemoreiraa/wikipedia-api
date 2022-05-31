@@ -1,4 +1,4 @@
-📋 Wikipedia API
+🔍 Wikipedia API
 =========================
 
 Wikipedia API, using React and Styled Components
