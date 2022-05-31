@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 98vw;
-    height: 100vh;
+    height: 90vh;
 `; 
 
 export const Search = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
 
     div {
         display: flex;
@@ -17,7 +18,7 @@ export const Search = styled.div`
 
         input {
             outline: none;
-            border: 1px solid black;
+            border: 1px solid gray;
             border-radius: 5px 0px 0px 5px;
             border-right: none;
             padding: 5px;
@@ -29,7 +30,7 @@ export const Search = styled.div`
 
         button {
             outline: none;
-            border: 1px solid black;
+            border: 1px solid gray;
             border-left: none;
             border-radius: 0px 5px 5px 0px;
             padding: 5px;
@@ -53,16 +54,33 @@ export const Results = styled.div`
     justify-items: center;
 
     div {
-        width: 80%;
+        width: 85%;
         box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.1);
-        padding: 15px;
-        border: 1px solid black;
+        border: 1px solid gray;
         border-radius: 15px;    
+        overflow: hidden;
+        
 
         a {
             color: black;
             text-decoration: none;
 
+        }
+
+        h1 {
+            margin-top: 0;
+            padding-left: 15px;
+            background-color: rgba(205, 205, 205, 0.715);
+            margin-bottom: 0;
+            padding: 5px 0 5px 10px;
+            font-size: 28px;
+        }
+
+        p { 
+            margin-top: 5px;
+            padding: 15px;
+            font-size: 18px;
+            line-height: 1.4em;
         }
     }
     
