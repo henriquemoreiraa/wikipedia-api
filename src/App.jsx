@@ -1,6 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { endpoint, params } from './api'
+import { ReactComponent as Search } from './imgs/search.svg'
+import wiki from './imgs/wikipedia-logo.png'
+import * as C from './styles'
 import './App.css';
 
 function App() {
@@ -44,24 +47,40 @@ function App() {
   }
 
   return (
-    <div>
-        <input type='text' name='test' value={inputValue} onChange={(e) => setInputValue(e.target.value)} autoFocus required/>
-        <button id='submit' type='button' onClick={getData}>Search</button>
+    <C.Container>
+          <C.Search>
+            <img src={wiki} alt="a" />
 
-        {datas === undefined ? <h1>carr</h1> :
+            <div>
+              <input
+                type='text'
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                autoFocus
+                required
+              />
+              <button onClick={getData} > <Search /> </button>
+            </div>
+          </C.Search>
+
+        {datas === undefined ? '' :
          
-          datas.map(e => (
-            <a href={`https://en.wikipedia.org/?curid=${e.pageid}`}  target='_blank'>
-              <div>
-                <h1>{e.title}</h1>
-                <p>{e.extract}</p>
-              </div>
-            </a>
-          ))
-         
-         
+         <C.Results>
+            {datas.map(e => (
+              
+                <div>
+                  <a
+                    href={`https://en.wikipedia.org/?curid=${e.pageid}`}
+                    target='_blank'>
+                      <h1>{e.title}</h1>
+                      <p>{e.extract}</p>
+                  </a>
+                </div>
+              
+            ))   }
+          </C.Results>
          }
-    </div>
+    </C.Container>
   );
 }
 
